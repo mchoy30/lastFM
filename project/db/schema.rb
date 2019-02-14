@@ -15,8 +15,10 @@ ActiveRecord::Schema.define(version: 2019_02_14_195734) do
   create_table "album_informations", force: :cascade do |t|
     t.integer "play_count"
     t.string "date"
+    t.integer "album_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["album_id"], name: "index_album_informations_on_album_id"
   end
 
   create_table "albums", force: :cascade do |t|

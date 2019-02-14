@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class AlbumInformationsController < ApplicationController
-  before_action :set_album_information, only: [:show, :edit, :update, :destroy]
+  before_action :set_album_information, only: %i[show edit update destroy]
 
   # GET /album_informations
   # GET /album_informations.json
@@ -9,8 +11,7 @@ class AlbumInformationsController < ApplicationController
 
   # GET /album_informations/1
   # GET /album_informations/1.json
-  def show
-  end
+  def show; end
 
   # GET /album_informations/new
   def new
@@ -18,8 +19,7 @@ class AlbumInformationsController < ApplicationController
   end
 
   # GET /album_informations/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /album_informations
   # POST /album_informations.json
@@ -62,13 +62,14 @@ class AlbumInformationsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_album_information
-      @album_information = AlbumInformation.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def album_information_params
-      params.require(:album_information).permit(:play_count, :date)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_album_information
+    @album_information = AlbumInformation.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def album_information_params
+    params.require(:album_information).permit(:play_count, :date)
+  end
 end
