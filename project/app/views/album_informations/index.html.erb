@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Album Informations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Play count</th>
+      <th>Date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @album_informations.each do |album_information| %>
+      <tr>
+        <td><%= album_information.play_count %></td>
+        <td><%= album_information.date %></td>
+        <td><%= link_to 'Show', album_information %></td>
+        <td><%= link_to 'Edit', edit_album_information_path(album_information) %></td>
+        <td><%= link_to 'Destroy', album_information, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Album Information', new_album_information_path %>

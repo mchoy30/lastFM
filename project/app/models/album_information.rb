@@ -1,0 +1,2 @@
+class AlbumInformation < ApplicationRecord
+end

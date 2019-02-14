@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Play count:</strong>
+  <%= @album_information.play_count %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @album_information.date %>
+</p>
+
+<%= link_to 'Edit', edit_album_information_path(@album_information) %> |
+<%= link_to 'Back', album_informations_path %>
