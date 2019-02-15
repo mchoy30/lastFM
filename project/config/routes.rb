@@ -5,8 +5,7 @@ Rails.application.routes.draw do
   resources :songs
   resources :albums
 
-  get '/about', to: redirect('about.html')
-
+  get '/pages/:page' => 'pages#show'
   root to: 'albums#index'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
