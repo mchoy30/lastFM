@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  get 'search/results'
   resources :album_informations # ,only: %i[index show]
   resources :songs
   resources :albums
 
+  get 'search_results', to: 'search#results', as: 'search_results'
   get '/pages/:page' => 'pages#show'
   root to: 'albums#index'
 

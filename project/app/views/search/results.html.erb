@@ -1,2 +1,7 @@
-<h1>Search#results</h1>
-<p>Find me in app/views/search/results.html.erb</p>
+<h1>Matching albums results</h1>
+
+
+
+<% @album_found.each do |album| %>
+<h3><%= album.album_title %></h3>
+<%end%>
