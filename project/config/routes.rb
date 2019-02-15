@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :songs
   resources :albums
 
+  get '/about', to: redirect('about.html')
 
   root to: 'albums#index'
 
