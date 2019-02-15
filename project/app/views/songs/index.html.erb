@@ -16,16 +16,14 @@
 
       <tr>
         <td><%= song.name %></td>
-        
+
         <td><%= link_to song.album.album_title, song.album %></td>
-        <td><%= link_to 'Show', song %></td>
-        <td><%= link_to 'Edit', edit_song_path(song) %></td>
-        <td><%= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        </tr>
     <% end %>
   </tbody>
-</table>
 
+</table>
+ <%= paginate @songs%>
 <br>
 
 <%= link_to 'New Song', new_song_path %>
