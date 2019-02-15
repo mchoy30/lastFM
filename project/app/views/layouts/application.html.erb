@@ -1,11 +1,16 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
 
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <head>
+    <title>Project</title>
      <nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand" href="#">Albums</a>
-    <a class="navbar-brand" href="#">Songs</a>
-    <a class="navbar-brand" href="#">About</a>
+    <%= link_to 'Back', albums_path %>
+    <a class="navbar-brand" href= "/albums/" >Albums</a>
+    <a class="navbar-brand" href= "/songs/">Songs</a>
+    <a class="navbar-brand" href="/pages/about/">About</a>
 
 <%= form_tag(search_results_path, method: "get") do %>
   <%= label_tag(:q, "Search for:") %>
@@ -14,12 +19,8 @@
 <% end %>
   </nav>
 
-    <title>Project</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
@@ -27,3 +28,4 @@
     <%= yield %>
   </body>
 </html>
+
