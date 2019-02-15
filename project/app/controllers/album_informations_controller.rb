@@ -11,7 +11,9 @@ class AlbumInformationsController < ApplicationController
 
   # GET /album_informations/1
   # GET /album_informations/1.json
-  def show; end
+  def show
+    @album_information = AlbumInformation.find(params[:id])
+  end
 
   # GET /album_informations/new
   def new
